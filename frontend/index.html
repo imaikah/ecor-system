@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eCOR System - Home</title>
+<style>
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f7f5;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #556b2f, #8fbc8f);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+header img {
+    width: 80px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    text-decoration: none;
+    color: #556b2f;
+    padding: 15px 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #556b2f;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #8fbc8f;
+}
+
+/* Hero Section */
+section {
+    text-align: center;
+    padding: 120px 20px;
+    background: url('https://images.unsplash.com/photo-1601758123927-1f53c77510d0?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(85,107,47,0.6);
+    z-index: 0;
+}
+
+section h2, section p, section a {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation-delay: 0.2s;
+}
+
+section p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    animation-delay: 0.4s;
+}
+
+section button {
+    background-color: #8fbc8f;
+    color: white;
+    padding: 15px 35px;
+    font-size: 1em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation-delay: 0.6s;
+}
+
+section button:hover {
+    background-color: #556b2f;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2f4f2f;
+    color: white;
+    font-size: 0.9em;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width:768px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    section h2 {
+        font-size: 2em;
+    }
+    section p {
+        font-size: 1em;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <img src="assets/images/ptc-logo.png" alt="PTC Logo">
+    <h1>eCOR System</h1>
+    <p>Pateros Technological College</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+</nav>
+
+<section>
+    <h2>Welcome to eCOR System</h2>
+    <p>Track and request your Certificate of Registration online easily.</p>
+    <a href="register.html"><button>Get Started</button></a>
+</section>
+
+<footer>
+    &copy; 2025 Pateros Technological College. All rights reserved.
+</footer>
+
+</body>
+</html>

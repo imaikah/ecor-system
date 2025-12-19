@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About eCOR</title>
+<style>
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f7f5;
+    color: #333;
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #556b2f, #8fbc8f);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 3em;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    text-decoration: none;
+    color: #556b2f;
+    padding: 15px 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #556b2f;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #8fbc8f;
+}
+
+/* Section Content */
+section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #556b2f;
+}
+
+section h3 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #8fbc8f;
+}
+
+section p, section li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+section li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2f4f2f;
+    color: white;
+    font-size: 0.9em;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width:768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    section h2 {
+        font-size: 2em;
+    }
+    section h3 {
+        font-size: 1.2em;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>About eCOR</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+</nav>
+
+<section>
+    <h2>What is eCOR?</h2>
+    <p>eCOR is an Online Certificate of Registration Tracking System for Pateros Technological College.</p>
+
+    <h3>Mission & Vision</h3>
+    <p>Provide students with easy and transparent access to registration status.</p>
+
+    <h3>Why it was created</h3>
+    <p>To simplify COR request and tracking process for students and administrators.</p>
+
+    <h3>System Features</h3>
+    <ul>
+        <li>Request COR online</li>
+        <li>Track COR status</li>
+        <li>Download COR PDF</li>
+    </ul>
+
+    <h3>Developer Info (Optional)</h3>
+    <p>Developed by BSIT 3M Students.</p>
+</section>
+
+<footer>
+    &copy; 2025 Pateros Technological College. All rights reserved.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Students - eCOR System</title>
+<style>
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f7f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #556b2f, #8fbc8f);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+header p {
+    font-size: 1em;
+    font-weight: 300;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #556b2f;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #556b2f;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #8fbc8f;
+}
+
+/* Main Content */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.content-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.6s ease;
+}
+
+.content-section h2 {
+    color: #556b2f;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+table th {
+    background: linear-gradient(135deg, #556b2f, #8fbc8f);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+table td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+table tr:hover {
+    background-color: #f8f9fa;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2f4f2f;
+    color: white;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width:768px) {
+    table {
+        font-size: 0.9em;
+    }
+    
+    table th,
+    table td {
+        padding: 10px;
+    }
+    
+    nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Manage Students</h1>
+    <p>Pateros Technological College - eCOR System</p>
+</header>
+
+<nav>
+    <a href="admin-dashboard.html">Dashboard</a>
+    <a href="manage-students.html">Manage Students</a>
+    <a href="manage-requests.html">Manage Requests</a>
+    <a href="index.html" class="logout-btn">Logout</a>
+</nav>
+
+<div class="container">
+    <div class="content-section">
+        <h2>All Registered Students</h2>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Student Number</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Year & Section</th>
+                    </tr>
+                </thead>
+                <tbody id="studentsTableBody">
+                    <tr>
+                        <td colspan="6" style="text-align:center;">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Pateros Technological College. All rights reserved.
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

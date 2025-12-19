@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - eCOR</title>
+<style>
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+body {
+    background-color: #f9f9f9; /* White theme default */
+    color: #333;
+    min-height: 100vh;
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Themes */
+body.green-olive {
+    background-color: #f0f4e3; /* Light olive background */
+    color: #3b3b2f; /* Darker text for contrast */
+}
+
+/* Header */
+header {
+    background-color: #556b2f; /* Olive green */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+    cursor: default;
+}
+
+body.white header {
+    background-color: #ffffff;
+    color: #333;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #8f9779; /* Olive-ish */
+    padding: 15px 0;
+}
+
+body.white nav {
+    background-color: #f5f5f5;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+body.white nav a {
+    color: #333;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+    background-color: #6b8e23; /* Hover olive shade */
+    color: #fff;
+}
+
+/* Section */
+section {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #e6ebd8; /* Light olive section */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.white section {
+    background-color: #fff;
+}
+
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+h2, h3 {
+    margin-bottom: 10px;
+    color: inherit;
+}
+
+/* Lists */
+ul {
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+ul li {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    transition: transform 0.2s ease;
+}
+
+ul li:hover {
+    transform: scale(1.05);
+    background-color: rgba(85, 107, 47, 0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #556b2f;
+    color: #fff;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.white footer {
+    background-color: #f5f5f5;
+    color: #333;
+    border-top: 2px solid #ccc;
+}
+
+/* Cursor Zoom Effect */
+body * {
+    cursor: pointer;
+}
+
+body *:hover {
+    transform: scale(1.05);
+}
+</style>
+</head>
+<body class="green-olive">
+<header>
+    <h1>Admin Dashboard</h1>
+</header>
+
+<nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="manage-requests.html">Manage Requests</a>
+    <a href="manage-students.html">Manage Students</a>
+    <a href="reports.html">Reports</a>
+    <a href="profile.html">Profile</a>
+    <a href="logout.html">Logout</a>
+</nav>
+
+<section>
+    <h2>Quick Stats</h2>
+    <ul id="stats">
+        <li>Loading...</li>
+    </ul>
+    <h3>Recent Activities</h3>
+    <ul id="activities">
+        <li>Loading...</li>
+    </ul>
+</section>
+<script>
+    async function loadDashboard() {
+        try {
+            const [studentsRes, requestsRes] = await Promise.all([
+                fetch('http://localhost:3000/api/students'),
+                fetch('http://localhost:3000/api/requests')
+            ]);
+            const students = await studentsRes.json();
+            const requests = await requestsRes.json();
+
+            // Calculate stats
+            const totalRequests = requests.length;
+            const pending = requests.filter(r => r.status === 'pending').length;
+            const processing = requests.filter(r => r.status === 'processing').length;
+            const completed = requests.filter(r => r.status === 'approved').length;
+
+            document.getElementById('stats').innerHTML = `
+                <li>Total Students: ${students.length}</li>
+                <li>Total Requests: ${totalRequests}</li>
+                <li>Pending: ${pending}</li>
+                <li>Processing: ${processing}</li>
+                <li>Completed: ${completed}</li>
+            `;
+
+            // Recent activities (last 5 requests)
+            const recent = requests.slice(-5).reverse();
+            document.getElementById('activities').innerHTML = recent.map(r => 
+                `<li>Request #${r.id} - ${r.status}</li>`
+            ).join('');
+        } catch (error) {
+            console.error('Error loading dashboard:', error);
+            document.getElementById('stats').innerHTML = '<li>Error loading stats</li>';
+            document.getElementById('activities').innerHTML = '<li>Error loading activities</li>';
+        }
+    }
+
+    loadDashboard();
+</script>
+
+<footer>
+    &copy; 2025 Pateros Technological College. All rights reserved.
+</footer>
+</body>
+</html>

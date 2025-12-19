@@ -1,0 +1,255 @@
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* ===== THEMES ===== */
+body.green-olive {
+    background-color: #f0f3e8; /* light olive background */
+    color: #3b3a30; /* dark olive text */
+}
+
+body.white-theme {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(90deg, #1E90FF, #00BFFF);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body.green-olive header {
+    background: linear-gradient(90deg, #6B8E23, #556B2F);
+}
+
+body.white-theme header {
+    background: #f1f1f1;
+    color: #333;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+header h1:hover {
+    transform: scale(1.05);
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    flex-wrap: wrap;
+}
+
+body.green-olive nav {
+    background-color: #556B2F;
+}
+
+body.white-theme nav {
+    background-color: #eaeaea;
+}
+
+nav a {
+    color: white;
+    padding: 14px 25px;
+    text-decoration: none;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+body.white-theme nav a {
+    color: #333;
+}
+
+nav a:hover {
+    background-color: #00BFFF;
+    transform: scale(1.05);
+}
+
+body.green-olive nav a:hover {
+    background-color: #6B8E23;
+}
+
+body.white-theme nav a:hover {
+    background-color: #ccc;
+}
+
+/* ===== MAIN SECTION ===== */
+section {
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+body.green-olive section {
+    background-color: #f5f6e0;
+}
+
+body.white-theme section {
+    background-color: #ffffff;
+}
+
+section h2 {
+    cursor: pointer;
+}
+
+section h2:hover {
+    transform: scale(1.05);
+    color: #556B2F; /* olive accent on hover */
+}
+
+/* ===== BUTTONS ===== */
+button, input[type="submit"] {
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #00BFFF;
+    transform: scale(1.05);
+}
+
+body.green-olive button, body.green-olive input[type="submit"] {
+    background-color: #556B2F;
+}
+
+body.green-olive button:hover, body.green-olive input[type="submit"]:hover {
+    background-color: #6B8E23;
+}
+
+body.white-theme button, body.white-theme input[type="submit"] {
+    background-color: #333;
+}
+
+body.white-theme button:hover, body.white-theme input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* ===== FORMS ===== */
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #1E90FF;
+    outline: none;
+}
+
+/* ===== TABLES ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #1E90FF;
+    color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 2px solid #1E90FF;
+}
+
+body.green-olive footer {
+    background-color: #556B2F;
+    border-top: 2px solid #6B8E23;
+}
+
+body.white-theme footer {
+    background-color: #f1f1f1;
+    color: #333;
+    border-top: 2px solid #ccc;
+}
+
+/* ===== CARDS ===== */
+.card {
+    background-color: #00BFFF;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 10px;
+    flex: 1;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+body.green-olive .card {
+    background-color: #6B8E23;
+}
+
+body.white-theme .card {
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* ===== FLEX CONTAINER ===== */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    nav {
+        flex-direction: column;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+}

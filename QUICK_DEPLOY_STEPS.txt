@@ -1,0 +1,79 @@
+═══════════════════════════════════════════════════════════
+  eCOR SYSTEM - QUICK DEPLOYMENT STEPS
+═══════════════════════════════════════════════════════════
+
+📋 REQUIREMENTS:
+   ✓ GitHub account (free - github.com/signup)
+   ✓ Git installed (git-scm.com/downloads)
+   ✓ 10-15 minutes
+
+═══════════════════════════════════════════════════════════
+
+🚀 DEPLOYMENT STEPS:
+
+1. INSTALL GIT
+   → Download: https://git-scm.com/downloads
+   → Install with defaults
+   → Restart computer
+
+2. CREATE GITHUB REPO
+   → Go to: https://github.com/new
+   → Name: ecor-system
+   → Public
+   → Create repository
+
+3. UPLOAD CODE (Run in Command Prompt):
+   
+   git init
+   git add .
+   git commit -m "eCOR System"
+   git remote add origin https://github.com/YOUR_USERNAME/ecor-system.git
+   git push -u origin main
+
+4. DEPLOY TO RENDER.COM
+   → Go to: https://render.com
+   → Sign up with GitHub
+   → New + → Blueprint
+   → Connect ecor-system repo
+   → Click Apply
+   → Wait 5-10 minutes
+
+5. GET YOUR URLS
+   Backend: https://ecor-backend.onrender.com
+   Frontend: https://ecor-frontend.onrender.com
+
+6. UPDATE FRONTEND API URL
+   → Open: frontend/js/main.js
+   → Line 2: Change to your backend URL
+   → const API_URL = 'https://ecor-backend.onrender.com/api';
+   → Save file
+   
+   git add frontend/js/main.js
+   git commit -m "Update API URL"
+   git push
+
+7. DONE! 🎉
+   Your site: https://ecor-frontend.onrender.com
+
+═══════════════════════════════════════════════════════════
+
+📱 DEFAULT ADMIN LOGIN:
+   Email: admin@ptc.edu.ph
+   Password: admin123
+
+═══════════════════════════════════════════════════════════
+
+⚠️ IMPORTANT NOTES:
+   • Free tier: Service sleeps after 15 min inactivity
+   • First request after sleep: ~30 seconds to wake
+   • Data persists in db.json
+   • Share frontend URL with users
+
+═══════════════════════════════════════════════════════════
+
+📚 DETAILED GUIDES:
+   • SIMPLE_DEPLOY.md (Tagalog, step-by-step)
+   • DEPLOYMENT_GUIDE.md (English, detailed)
+   • README.md (Full documentation)
+
+═══════════════════════════════════════════════════════════

@@ -1,0 +1,42 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Juan Dela Cruz",
+      "email": "juan@student.com",
+      "password": "password123",
+      "studentId": "2024-00001",
+      "course": "BSIT",
+      "year": "1-A",
+      "createdAt": "2025-12-19T17:11:57.537Z"
+    },
+    {
+      "id": 2,
+      "name": "Maria Santos",
+      "email": "maria@student.com",
+      "password": "pass456",
+      "studentId": "2024-00002",
+      "course": "BSCS",
+      "year": "2-B",
+      "createdAt": "2025-12-19T17:12:41.025Z"
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "studentId": 1,
+      "type": "COR",
+      "status": "approved",
+      "submittedAt": "2025-12-19T17:11:57.612Z",
+      "approvedAt": "2025-12-19T17:11:57.669Z",
+      "comments": "Your COR has been approved"
+    }
+  ],
+  "admins": [
+    {
+      "id": 1,
+      "email": "admin@ptc.edu.ph",
+      "password": "admin123"
+    }
+  ]
+}
